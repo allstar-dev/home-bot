@@ -1,0 +1,9 @@
+<div>
+  <svg>
+    <rect width="100%" [attr.height]="rack.height * 10" class="rack-svg" />
+    <g>
+      <rect width="5" [attr.height]="rack.height * 5" class="rack-svg-internal" />
+      <app-device-svg *ngFor="let device of rack.devices"></app-device-svg>
+    </g>
+  </svg>
+</div>

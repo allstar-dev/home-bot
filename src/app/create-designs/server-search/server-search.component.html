@@ -1,0 +1,12 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Server" aria-label="Server" [matAutocomplete]="auto" [formControl]="serverCtrl">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let server of filteredServers | async" [value]="server.name" (click)=" addServer(server)">
+        <!-- <img class="example-option-img" aria-hidden [src]="server.icon" height="25"> -->
+        <span>{{server.name}}</span> |
+        <small>Height: {{server.height}}</small>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

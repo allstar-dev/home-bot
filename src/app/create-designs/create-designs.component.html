@@ -1,0 +1,47 @@
+<div>
+  <div class="row">
+    <div class="col side-bar mat-caption">
+      <div class="mat-body-2">
+        Racks
+      </div>
+
+      <ul>
+        <li *ngFor="let rack of rackInventory">
+          {{ rack.name }}
+        </li>
+      </ul>
+      <div class="mat-body-2">
+        Servers
+      </div>
+      <ul>
+        <li *ngFor="let server of serverInventory">
+          {{ server.name }}
+        </li>
+      </ul>
+      <div class="mat-body-2">
+        Switches
+      </div>
+      <ul>
+        <li *ngFor="let switch of switchInventory">
+          {{ switch.name }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-10">
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Rack" aria-label="Rack" [matAutocomplete]="auto" [formControl]="rackCtrl">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let rack of filteredRacks | async" [value]="rack.name" (click)=" addRack(rack)">
+              <!-- <img class="example-option-img" aria-hidden [src]="rack.icon" height="25"> -->
+              <span>{{rack.name}}</span> |
+              <small>Height: {{rack.height}}</small>
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+      <app-server-search (server)="addServer($event)"></app-server-search>
+      <app-switch-search (switchDevice)="addSwitch($event)"></app-switch-search>
+    </div>
+  </div>
+</div>

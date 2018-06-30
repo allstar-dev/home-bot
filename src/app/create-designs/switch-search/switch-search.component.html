@@ -1,0 +1,12 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Switch" aria-label="Switch" [matAutocomplete]="auto" [formControl]="switchDeviceCtrl">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let switch of filteredSwitches | async" [value]="switch.name" (click)=" addSwitch(switch)">
+        <!-- <img class="example-option-img" aria-hidden [src]="server.icon" height="25"> -->
+        <span>{{switch.name}}</span> |
+        <small>Height: {{switch.height}}</small>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

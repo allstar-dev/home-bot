@@ -1,0 +1,33 @@
+[{
+    "id": 1,
+    "name": "Switch 1",
+    "height": 1,
+    "upSteamPorts": [{
+      "id": 1,
+      "name": "10G Port 1"
+    }],
+    "powerSupplies": [{
+        "id": 1,
+        "name": "PS1"
+      },
+      {
+        "id": 2,
+        "name": "PS2"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Switch 2",
+    "height": 1,
+    "powerSupplies": [{
+        "id": 3,
+        "name": "PS1"
+      },
+      {
+        "id": 4,
+        "name": "PS2"
+      }
+    ]
+  }
+]

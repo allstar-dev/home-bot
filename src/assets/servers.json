@@ -1,0 +1,44 @@
+[{
+    "id": 1,
+    "name": "Server 1",
+    "height": 1,
+    "bladeSlots": 4,
+    "powerSupplies": [{
+        "id": 1,
+        "name": "PS1"
+      },
+      {
+        "id": 2,
+        "name": "PS2"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Server 2",
+    "height": 1,
+    "powerSupplies": [{
+        "id": 3,
+        "name": "PS1"
+      },
+      {
+        "id": 4,
+        "name": "PS2"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Server 3",
+    "height": 3,
+    "powerSupplies": [{
+        "id": 5,
+        "name": "PS1"
+      },
+      {
+        "id": 6,
+        "name": "PS2"
+      }
+    ]
+  }
+]

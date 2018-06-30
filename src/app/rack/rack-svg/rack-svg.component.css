@@ -1,0 +1,11 @@
+.rack-svg {
+  fill: red;
+}
+
+.rack-svg-internal {
+  fill: green;
+}
+
+svg {
+  width: 100%;
+}

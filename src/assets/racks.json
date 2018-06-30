@@ -1,0 +1,31 @@
+[{
+    "id": 1,
+    "name": "rack1",
+    "height": 45
+  },
+  {
+    "id": 2,
+    "name": "rack2",
+    "height": 40
+  },
+  {
+    "id": 3,
+    "name": "rack3",
+    "height": 45
+  },
+  {
+    "id": 4,
+    "name": "rack4",
+    "height": 40
+  },
+  {
+    "id": 5,
+    "name": "rack5",
+    "height": 45
+  },
+  {
+    "id": 6,
+    "name": "rack6",
+    "height": 45
+  }
+]
