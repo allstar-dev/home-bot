@@ -9,9 +9,9 @@ import { PowerSupply } from "../models/power-supply";
   styleUrls: ["./rack.component.css"]
 })
 export class RackComponent implements OnInit {
-  newRack = new Rack("New Rack");
+  newRack = new Rack("New Rack", 2);
 
-  addDevice () {
+  addDevice() {
     console.log("hi");
     this.newRack.addDevice(new Device("device1"));
   }

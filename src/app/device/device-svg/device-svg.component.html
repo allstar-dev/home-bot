@@ -1,3 +1,8 @@
-<p>
-  device-svg works!
-</p>
+<svg:g>
+  <rect class="rack-device" width="100%" [attr.height]="deviceHeight" [attr.y]="yPosition" rx="3" ry="3" />
+  <line class="device-decoration" x1="40%" [attr.y1]="yPosition + (deviceHeight/2)" x2="90%" [attr.y2]="yPosition  + (deviceHeight/2)"
+    stroke-linecap="round" />
+  <circle class="device-decoration" r="2" cx="10%" [attr.cy]="yPosition + (deviceHeight/2)"></circle>
+  <circle class="device-decoration" r="2" cx="18%" [attr.cy]="yPosition + (deviceHeight/2)"></circle>
+  <circle class="device-decoration" r="2" cx="26%" [attr.cy]="yPosition + (deviceHeight/2)"></circle>
+</svg:g>

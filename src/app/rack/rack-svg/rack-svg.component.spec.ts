@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { RackSvgComponent } from './rack-svg.component';
+import { RackSvgComponent } from "./rack-svg.component";
 
-describe('RackSvgComponent', () => {
+describe("RackSvgComponent", () => {
   let component: RackSvgComponent;
   let fixture: ComponentFixture<RackSvgComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RackSvgComponent ]
-    })
-    .compileComponents();
+      declarations: [RackSvgComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('RackSvgComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

@@ -13,6 +13,7 @@ import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatInputModule } from "@angular/material";
+import { MatExpansionModule } from "@angular/material/expansion";
 import "hammerjs";
 
 import { AppComponent } from "./app.component";
@@ -30,6 +31,7 @@ import { ServerSearchComponent } from "./create-designs/server-search/server-sea
 import { ServerService } from "./server/server.service";
 import { SwitchSearchComponent } from "./create-designs/switch-search/switch-search.component";
 import { SwitchService } from "./switch/switch.service";
+import { RackSearchComponent } from "./create-designs/rack-search/rack-search.component";
 
 @NgModule({
   imports: [
@@ -49,7 +51,8 @@ import { SwitchService } from "./switch/switch.service";
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatExpansionModule
   ],
   declarations: [
     AppComponent,
@@ -62,7 +65,8 @@ import { SwitchService } from "./switch/switch.service";
     ViewDesignsComponent,
     CreateDesignsComponent,
     ServerSearchComponent,
-    SwitchSearchComponent
+    SwitchSearchComponent,
+    RackSearchComponent
   ],
   providers: [RackService, ServerService, SwitchService],
   bootstrap: [AppComponent]

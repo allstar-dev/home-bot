@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { DeviceSvgComponent } from './device-svg.component';
+import { DeviceSvgComponent } from "./device-svg.component";
 
-describe('DeviceSvgComponent', () => {
+describe("DeviceSvgComponent", () => {
   let component: DeviceSvgComponent;
   let fixture: ComponentFixture<DeviceSvgComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DeviceSvgComponent ]
-    })
-    .compileComponents();
+      declarations: [DeviceSvgComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('DeviceSvgComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

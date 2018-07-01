@@ -45,5 +45,6 @@ export class SwitchSearchComponent implements OnInit {
 
   addSwitch(switchDevice: Switch) {
     this.switchDevice.emit(switchDevice);
+    this.switchDeviceCtrl.setValue("");
   }
 }

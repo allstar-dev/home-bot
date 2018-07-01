@@ -1,47 +1,75 @@
-<div>
-  <div class="row">
-    <div class="col side-bar mat-caption">
-      <div class="mat-body-2">
+<div class="create-designs">
+  <div class="row mat-body-2 create-designs">
+
+    <div class="col side-bar mat-caption ">
+
+
+      <div class="mat-body-2 section-header " (click)="rackSearch=! rackSearch ">
+        <mat-icon *ngIf="rackSearch " class="small-icon ">expand_less</mat-icon>
+        <mat-icon *ngIf="!rackSearch " class="small-icon ">expand_more</mat-icon>
         Racks
       </div>
 
+      <app-rack-search class="search " *ngIf="rackSearch " (rack)="addRack($event) "></app-rack-search>
       <ul>
-        <li *ngFor="let rack of rackInventory">
+        <li class="placeholder-item " *ngIf="rackInventory.length===0 ">Click to add racks...</li>
+        <li class="inventory-item " *ngFor="let rack of rackInventory " (click)="selectRack(rack) ">
           {{ rack.name }}
         </li>
       </ul>
-      <div class="mat-body-2">
-        Servers
+
+      <div class="mat-body-2 section-header " (click)="serverSearch=! serverSearch">
+        <mat-icon *ngIf="serverSearch " class="small-icon">expand_less</mat-icon>
+        <mat-icon *ngIf="!serverSearch " class="small-icon ">expand_more</mat-icon>
+        Server
       </div>
+      <app-server-search class="search " *ngIf="serverSearch " (server)="addServer($event) "></app-server-search>
       <ul>
-        <li *ngFor="let server of serverInventory">
+        <li class="placeholder-item " *ngIf="serverInventory.length===0 ">Click to add servers...</li>
+        <li class="inventory-item " *ngFor="let server of serverInventory" (click)="addServerToRack(selectedRack, server)">
           {{ server.name }}
         </li>
       </ul>
-      <div class="mat-body-2">
-        Switches
+
+      <div class="mat-body-2 section-header" (click)="switchSearch=! switchSearch ">
+        <mat-icon *ngIf="switchSearch " class="small-icon ">expand_less</mat-icon>
+        <mat-icon *ngIf="!switchSearch " class="small-icon ">expand_more</mat-icon>
+        Switch
       </div>
+      <app-switch-search class="search " *ngIf="switchSearch " (switchDevice)="addSwitch($event) "></app-switch-search>
       <ul>
-        <li *ngFor="let switch of switchInventory">
+        <li class="placeholder-item " *ngIf="switchInventory.length===0 ">Click to add switches...</li>
+        <li class="inventory-item " *ngFor="let switch of switchInventory ">
           {{ switch.name }}
         </li>
       </ul>
     </div>
-    <div class="col-10">
-      <form class="example-form">
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Rack" aria-label="Rack" [matAutocomplete]="auto" [formControl]="rackCtrl">
-          <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let rack of filteredRacks | async" [value]="rack.name" (click)=" addRack(rack)">
-              <!-- <img class="example-option-img" aria-hidden [src]="rack.icon" height="25"> -->
-              <span>{{rack.name}}</span> |
-              <small>Height: {{rack.height}}</small>
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-      </form>
-      <app-server-search (server)="addServer($event)"></app-server-search>
-      <app-switch-search (switchDevice)="addSwitch($event)"></app-switch-search>
+    <div class="col-10 ">
+      <!-- <div>
+        <h2>
+          Data
+        </h2>
+        <h4>
+          Rack
+        </h4>
+        {{ selectedRack | json }}
+        <h4>
+          Server
+        </h4>
+        {{ selectedServer | json }}
+        <h4>
+          Switch
+        </h4>
+        {{ selectedSwitch | json }}
+      </div> -->
+      <div>
+        <h2>
+          Preview
+        </h2>
+      </div>
+      <div class="rack-gallery ">
+        <app-rack-svg *ngFor="let rack of rackInventory " [rack]="rack "></app-rack-svg>
+      </div>
     </div>
   </div>
 </div>

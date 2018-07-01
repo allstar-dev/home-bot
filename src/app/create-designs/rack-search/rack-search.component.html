@@ -1,0 +1,12 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Add Rack..." aria-label="Rack" [matAutocomplete]="auto" [formControl]="rackCtrl">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let rack of filteredRacks | async" [value]="rack.name" (click)=" addRack(rack)">
+        <!-- <img class="example-option-img" aria-hidden [src]="rack.icon" height="25"> -->
+        <span>{{rack.name}}</span> |
+        <small>Height: {{rack.height}}</small>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

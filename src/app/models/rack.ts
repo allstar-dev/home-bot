@@ -8,59 +8,45 @@ export class Rack {
   devices: Device[];
   height: number;
 
-  constructor(name: string) {
+  constructor(name: string, height: number) {
     this.id = Math.round(100 * Math.random());
     this.name = name;
     this.power = Math.round(4 * Math.random());
-    this.height = Math.round(20 * Math.random());
+    this.height = height;
     this.devices = [];
   }
   getName() {
     return this.name;
   }
 
-  addDevice(device: Device) {
-    // this.getAvailableSpace(device.height);
-    this.devices.push(device);
+  public addDevice(device: Device) {
+    device.position = null;
+    this.setDevicePosition(device);
+    if (device.position) {
+      console.log(device.position);
+      this.devices.push(device);
+    }
+  }
+
+  setDevicePosition(device: Device) {
+    if (this.devices.length === 0 && device.height <= this.height) {
+      device.position = 1;
+    } else {
+      const maxInstalledPosition: number = Math.max.apply(
+        Math,
+        this.devices.map(function(o) {
+          return o.position + o.height;
+        })
+      );
+      if (maxInstalledPosition + device.height <= this.height) {
+        device.position = maxInstalledPosition + 1;
+      } else {
+        console.log("Rack full");
+      }
+    }
   }
 
   removeDevice(device: Device) {
     this.devices.splice(this.devices.indexOf(device), 1);
   }
-
-  // getAvailableSpace(height: number): AvailableSpace[] {
-  // if (this.devices.length === 0) {
-  //   return [{ startPosition: 0, endPosition: this.height }];
-  // } else {
-  //   this.devices.sort(
-  //     (a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0)
-  //   );
-  //   let initialPosition: number = 1;
-  //   let availableSpaces: AvailableSpace[] = [];
-  //   this.devices.forEach((device, index) => {
-  //     // check first slot
-  //     if (
-  //       index === 0 &&
-  //       initialPosition < device.position &&
-  //       device.position >= height
-  //     ) {
-  //       availableSpaces.push({
-  //         startPosition: 0,
-  //         endPosition: device.position
-  //       });
-  //       // last slot
-  //     } else if (
-  //       index === this.devices.length &&
-  //       device.position + device.height + height < this.height
-  //     ) {
-  //       availableSpaces[index] = {
-  //         startPosition: 0,
-  //         endPosition: device.position
-  //       };
-  //       // window after
-  //     } else {
-  //     }
-  //   });
-  // }
-  // }
 }

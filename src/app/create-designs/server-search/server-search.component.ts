@@ -38,5 +38,6 @@ export class ServerSearchComponent implements OnInit {
   }
   addServer(server: Server) {
     this.server.emit(server);
+    this.serverCtrl.setValue("");
   }
 }

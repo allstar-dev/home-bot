@@ -1,0 +1,10 @@
+.rack-device {
+  fill: rgba(0, 0, 0, .7);
+  stroke: black;
+}
+
+.device-decoration {
+  /* stroke: rgba(255, 255, 255, 0.7); */
+  stroke: #e91e63;
+  stroke-width: 3px;
+}

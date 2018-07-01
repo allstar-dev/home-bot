@@ -13,33 +13,27 @@ import { Switch } from "../models/switch";
   styleUrls: ["./create-designs.component.css"]
 })
 export class CreateDesignsComponent implements OnInit {
-  racks: Rack[];
+  rackSearch: Boolean = false;
+  serverSearch: Boolean = false;
+  switchSearch: Boolean = false;
+
   rackInventory: Rack[] = [];
   serverInventory: Server[] = [];
   switchInventory: Switch[] = [];
-  rackCtrl = new FormControl();
-  filteredRacks: Observable<Rack[]>;
 
-  constructor(private rackService: RackService) {
-    this.filteredRacks = this.rackCtrl.valueChanges.pipe(
-      startWith(""),
-      map(rack => (rack ? this._filteredRacks(rack) : this.racks))
-    );
-  }
+  selectedRack: Rack;
+  selectedServer: Server;
+  selectedSwitch: Switch;
 
-  private _filteredRacks(value: string): Rack[] {
-    const filterValue = value.toLowerCase();
-
-    return this.racks.filter(
-      rack => rack.name.toLowerCase().indexOf(filterValue) === 0
-    );
-  }
+  constructor(private rackService: RackService) {}
 
   addRack(rack: Rack) {
+    rack = new Rack(rack.name, rack.height);
     this.rackInventory.push(rack);
   }
 
   addServer(server: Server) {
+    server = new Server(server.name, server.height, server.bladeSlots);
     this.serverInventory.push(server);
   }
 
@@ -47,7 +41,14 @@ export class CreateDesignsComponent implements OnInit {
     this.switchInventory.push(switchDevice);
   }
 
-  ngOnInit() {
-    this.rackService.getRacks().subscribe(racks => (this.racks = racks));
+  selectRack(rack) {
+    this.selectedRack = rack;
   }
+
+  addServerToRack(rack: Rack, server: Server) {
+    this.selectedServer = server;
+    rack.addDevice(server);
+  }
+
+  ngOnInit() {}
 }

@@ -6,6 +6,7 @@ export class Device {
   powerSupplies: PowerSupply[];
   height: number;
   position: number;
+  rackId: number;
 
   constructor(name: string) {
     this.id = Math.round(100 * Math.random());

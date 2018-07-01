@@ -1,11 +1,13 @@
 .rack-svg {
-  fill: red;
+  fill: rgba(255, 255, 255, 0.7);
+  max-width: 200px;
 }
 
 .rack-svg-internal {
-  fill: green;
+  fill: darkslategray;
 }
 
 svg {
-  width: 100%;
+  margin: 1em;
+  opacity: 0.8;
 }

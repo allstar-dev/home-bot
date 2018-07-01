@@ -5,9 +5,13 @@ export class Server extends Device {
   manufacturer: string;
   serverBlades?: ServerBlade[];
   bladeSlots?: number;
+  extra: string;
 
-  constructor(manufacturer: string) {
+  constructor(name: string, height: number, bladeSlots?: number) {
     super("new device");
-    this.manufacturer = manufacturer;
+    this.name = name;
+    this.bladeSlots = bladeSlots;
+    this.height = height;
+    this.extra = "hello";
   }
 }

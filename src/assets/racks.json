@@ -1,31 +1,31 @@
 [{
     "id": 1,
-    "name": "rack1",
+    "name": "Rack 1",
     "height": 45
   },
   {
     "id": 2,
-    "name": "rack2",
+    "name": "Rack 2",
     "height": 40
   },
   {
     "id": 3,
-    "name": "rack3",
+    "name": "Rack 3",
     "height": 45
   },
   {
     "id": 4,
-    "name": "rack4",
+    "name": "Rack 4",
     "height": 40
   },
   {
     "id": 5,
-    "name": "rack5",
+    "name": "Rack 5",
     "height": 45
   },
   {
     "id": 6,
-    "name": "rack6",
+    "name": "Rack 6",
     "height": 45
   }
 ]
